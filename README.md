@@ -3,7 +3,8 @@ Some tiny tools for handling FITS files
 
 ## imhead.py
 
-Utility to read headers from FITS files
+Utility to read headers from FITS files. It works as Iraf's _hselect_
+and _imhead longheader=no_ 
 
 This tool is intended to be used from a terminal in order to have easy
 access to them
@@ -19,6 +20,10 @@ It is also possible to use wildcards:
 imhead.py *.fits keyword1 keyword2 ... keywordN
 ```
 
+To have a quick look of what images are:
+```shell
+imhead.py *.fits
+```
 
 # Future plans
 I plan to include some other tools (as needed) that should work as in

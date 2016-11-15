@@ -25,7 +25,7 @@ class ImageHeader(object):
         Also performs some checks on the validity of the input
         """
         self.args = sys.argv
-        print self.args
+        # print self.args
         try:
             if '*' not in self.args[1]:
                 # if the program is called from a terminal
