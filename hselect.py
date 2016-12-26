@@ -2,10 +2,10 @@
 """Utility to read headers from FITS files
 
 This tool is intended to be used from a terminal in order to have easy access
-to them
+FITS headers
 
 Mode of Use:
-    imhead.py image.fits keyword1 keyword2 ... keywordN
+    hselect.py image.fits keyword1 keyword2 ... keywordN
 """
 from astropy.io import fits
 import sys
@@ -65,7 +65,7 @@ class ImageHeader(object):
     @staticmethod
     def usage_exit():
         """Print usage and exit"""
-        sys.exit('\nUsage: \n\timhead.py image.fits keyword1 keyword2 ... keywordN')
+        sys.exit('\nUsage: \n\thselect.py image.fits keyword1 keyword2 ... keywordN')
 
 
 if __name__ == '__main__':
