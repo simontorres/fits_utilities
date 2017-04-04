@@ -59,7 +59,7 @@ class ImageHeader(object):
                 # print(header.keys)
                 if len(self.file_list) == 1:
                     for keyword in header:
-                        print '{:8}= {:30} / {:47}'.format(keyword, header[keyword], header.comments[keyword])
+                        print('{:8}= {:30} / {:47}'.format(keyword, header[keyword], header.comments[keyword]))
                 else:
                     print('{:35} {:15}'.format(image, header['OBJECT']))
             except IOError:
