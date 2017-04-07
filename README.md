@@ -35,8 +35,8 @@ imhead *.fits
 I plan to include some other tools (as needed) that should work as in
 IRAF, such as:
 
-1. display.py
-2. hedit.py
-3. imstat.py
+1. `display`
+2. `hedit`
+3. `imstat`
 
 If you are interested in one of those let me know.
