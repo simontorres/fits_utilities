@@ -1,6 +1,12 @@
 # Fits Utilities
 Some tiny tools for handling FITS files
 
+# Install
+
+```shell
+sudo python setup.py install
+```
+
 ## imhead.py
 
 Utility to read headers from FITS files. It works as Iraf's _hselect_
@@ -12,17 +18,17 @@ access to them
 Mode of Use:
 
 ```shell
-imhead.py image.fits keyword1 keyword2 ... keywordN
+imhead image.fits keyword1 keyword2 ... keywordN
 ```
 
 It is also possible to use wildcards:
 ```shell
-imhead.py *.fits keyword1 keyword2 ... keywordN
+imhead *.fits keyword1 keyword2 ... keywordN
 ```
 
 To have a quick look of what images are:
 ```shell
-imhead.py *.fits
+imhead *.fits
 ```
 
 # Future plans
