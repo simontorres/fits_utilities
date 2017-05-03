@@ -71,7 +71,7 @@ class ImageHeader(object):
     @staticmethod
     def usage_exit():
         """Print usage and exit"""
-        sys.exit('\nUsage: \n\timhead.py image.fits\n\timhead.py *fits')
+        sys.exit('\nUsage: \n\timhead image.fits\n\timhead *fits')
 
 
 if __name__ == '__main__':

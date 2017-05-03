@@ -65,7 +65,7 @@ class HeaderSelect(object):
     @staticmethod
     def usage_exit():
         """Print usage and exit"""
-        sys.exit('\nUsage: \n\thselect.py image.fits keyword1 keyword2 ... keywordN')
+        sys.exit('\nUsage: \n\thselect image.fits keyword1 keyword2 ... keywordN')
 
 
 if __name__ == '__main__':
