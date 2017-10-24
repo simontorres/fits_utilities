@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/simontorres/fitsUtilities.svg?branch=master)](https://travis-ci.org/simontorres/fitsUtilities)
+
 # Fits Utilities
 Some tiny tools for handling FITS files
 
