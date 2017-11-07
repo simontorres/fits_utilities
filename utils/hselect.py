@@ -7,6 +7,8 @@ FITS headers
 Mode of Use:
     hselect.py image.fits keyword1 keyword2 ... keywordN
 """
+from __future__ import absolute_import
+
 from astropy.io import fits
 import sys
 import glob
@@ -60,7 +62,7 @@ class HeaderSelect(object):
                 print("Image %s is corrupt or doesn't have a header" % image)
             except KeyError as err:
                 image_info += "\t<KeyError %s>" % key.upper()
-            print image_info
+            print(image_info)
 
     @staticmethod
     def usage_exit():

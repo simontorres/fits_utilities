@@ -4,11 +4,53 @@ python:
   #- "3.2"
   #- "3.3"
   #- "3.4"
-  #- "3.5"
+  - "3.5"
   #- "3.5-dev" # 3.5 development branch
-  #- "3.6"
+  - "3.6"
   #- "3.6-dev" # 3.6 development branch
   #- "3.7-dev" # 3.7 development branch
+
+branches:
+  only:
+  - master
+
 # command to install dependencies
 install:
-  - pip install .
+  - sudo apt-get update
+
+  # Here we install Anaconda to work with Virtual Environments. We do this
+  # conditionally because it saves us some downloading if the version is the same.
+  - if [[ "$TRAVIS_PYTHON_VERSION" == "2.7" ]]; then
+      wget https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh -O miniconda.sh;
+    else
+      wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
+    fi
+
+  - bash miniconda.sh -b -p $HOME/miniconda
+  - export PATH="$HOME/miniconda/bin:$PATH"
+  - hash -r
+  - conda config --set always_yes yes --set changeps1 no
+
+  # Adding AstroConda Channel since it contains most of the dependencies for
+  # Dragons and Dragons-SOAR
+  - conda config --add channels http://ssb.stsci.edu/astroconda
+  - conda update -q conda
+
+  # Useful for debugging any issues with conda
+  - conda info -a
+
+  # Create astroconda virtual environment
+  - conda create -q -n astroconda stsci python=$TRAVIS_PYTHON_VERSION
+  - source activate astroconda
+
+  # Install packages
+  - pip install coveralls
+  - conda install -c astropy ccdproc
+
+
+script:
+- pytest
+- coverage run --branch --source= setup.py test
+
+after_success:
+- coveralls

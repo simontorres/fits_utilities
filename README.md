@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/simontorres/fitsUtilities.svg?branch=master)](https://travis-ci.org/simontorres/fitsUtilities)
 [![Documentation Status](https://readthedocs.org/projects/fitsutilities/badge/?version=latest)](http://fitsutilities.readthedocs.io/en/latest/?badge=latest)
+
 # Fits Utilities
 Some tiny tools for handling FITS files
 

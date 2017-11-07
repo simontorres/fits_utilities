@@ -13,6 +13,8 @@ Mode of Use:
     imhead.py *.fits
 
 """
+from __future__ import absolute_import
+
 from astropy.io import fits
 import sys
 import glob
