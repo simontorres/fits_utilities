@@ -6,6 +6,7 @@ setup(
     packages=['utils'],
     package_dir={'utils': 'utils'},
     scripts=['bin/imhead', 'bin/hselect'],
+    test_suite="utils.tests.test_imports",
     url='https://github.com/simontorres/fitsUtilities',
     license='GNU/GPL',
     author='Simon Torres R.',
