@@ -1,4 +1,3 @@
-#!/usr/bin/python2.7
 """Utility to read headers from FITS files
 
 This tool is intended to be used from a terminal in order to have easy access
