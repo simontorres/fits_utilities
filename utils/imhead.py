@@ -8,8 +8,8 @@ would do with the option longheader+ (l+). If you parse more than one image at a
 will print the image name and the value of the keyword OBJECT
 
 Mode of Use:
-    imhead.py image.fits
-    imhead.py *.fits
+    >>> imhead.py image.fits
+    >>> imhead.py *.fits
 
 """
 from __future__ import absolute_import
