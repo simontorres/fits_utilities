@@ -1,4 +1,4 @@
-ccdproc
 matplotlib
 coveralls
 astropy
+ccdproc
