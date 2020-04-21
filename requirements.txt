@@ -1,0 +1,4 @@
+ccdproc
+matplotlib
+coveralls
+astropy
