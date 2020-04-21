@@ -52,3 +52,7 @@ class ShowFits(object):
 
         return z1, z2
 
+
+def show_fits():
+    show__fits = ShowFits()
+    show__fits()

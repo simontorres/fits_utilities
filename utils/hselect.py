@@ -69,6 +69,6 @@ class HeaderSelect(object):
         sys.exit('\nUsage: \n\thselect image.fits keyword1 keyword2 ... keywordN')
 
 
-if __name__ == '__main__':
+def header_select():
     hselect = HeaderSelect()
     hselect()

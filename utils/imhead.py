@@ -7,9 +7,6 @@ If the arguments are only one image it will print the full header like IRAF's im
 would do with the option longheader+ (l+). If you parse more than one image at a time it
 will print the image name and the value of the keyword OBJECT
 
-Mode of Use:
-    >>> imhead.py image.fits
-    >>> imhead.py *.fits
 
 """
 from __future__ import absolute_import
@@ -79,7 +76,7 @@ class ImageHeader(object):
         sys.exit('\nUsage: \n\timhead image.fits\n\timhead *fits')
 
 
-if __name__ == '__main__':
+def image_header():
     imhead = ImageHeader()
     imhead()
 
