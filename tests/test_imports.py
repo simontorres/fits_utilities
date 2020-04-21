@@ -6,7 +6,7 @@ def test_sample():
 
 def test_import():
     try:
-        from utils.hselect import HeaderSelect
-        from utils.imhead import ImageHeader
+        from fits_utilities.hselect import HeaderSelect
+        from fits_utilities.imhead import ImageHeader
     except ImportError:
         return False

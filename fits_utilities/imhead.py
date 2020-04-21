@@ -80,4 +80,3 @@ def image_header():
     imhead = ImageHeader()
     imhead()
 
-# Atmospheric Pressure [hPS] at start of exposur
