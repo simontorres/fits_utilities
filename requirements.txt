@@ -1,3 +1,4 @@
+setuptools>=30.3
 matplotlib
 coveralls
 astropy
