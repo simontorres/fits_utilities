@@ -1,4 +1,4 @@
-![Python package](https://github.com/simontorres/fits_utilities/workflows/Python%20package/badge.svg)
+![Fits Utilities](https://github.com/simontorres/fits_utilities/workflows/Fits%20Utilities/badge.svg)
 [![Build Status](https://travis-ci.org/simontorres/fitsUtilities.svg?branch=master)](https://travis-ci.org/simontorres/fitsUtilities)
 [![Documentation Status](https://readthedocs.org/projects/fitsutilities/badge/?version=latest)](http://fitsutilities.readthedocs.io/en/latest/?badge=latest)
 [![DOI](https://zenodo.org/badge/73316179.svg)](https://zenodo.org/badge/latestdoi/73316179)
