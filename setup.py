@@ -129,8 +129,8 @@ setup(
 
     entry_points={
         "console_scripts": [
-            "showfits = fits_utilities.showfits.show_fits",
-            "hselect = fits_utilities.hselect.header_select",
-            "imhead = fits_utilities.imhead.image_header"]},
+            "showfits = fits_utilities.showfits:show_fits",
+            "hselect = fits_utilities.hselect:header_select",
+            "imhead = fits_utilities.imhead:image_header"]},
 
    )
