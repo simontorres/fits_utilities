@@ -48,7 +48,7 @@ imhead file_001.fits
 
 ## showfits
 
-Displays images using matplotlib. Only handles 2D images for now.
+Displays images using matplotlib. For 1D files the x-axis will always show `Wavelength` even if it is pixels.
 This is inteded as a quick look tool only
 
 ```shell
