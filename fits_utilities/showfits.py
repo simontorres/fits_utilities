@@ -1,12 +1,14 @@
 import argparse
 import sys
 import glob
+import goodman_pipeline
 import logging
 import matplotlib.pyplot as plt
 import numpy as np
 import os
 import re
 
+from astropy.visualization import ZScaleInterval
 from ccdproc import CCDData
 from mpl_toolkits.axes_grid1 import make_axes_locatable
 
@@ -16,6 +18,8 @@ class ShowFits(object):
     def __init__(self):
         self.args = self.get_args()
         self.log = self.__get_logger()
+        self.scale = ZScaleInterval()
+        self.wcs = goodman_pipeline.wcs.WCS()
 
         try:
             if len(self.args.files) == 1:
@@ -36,7 +40,7 @@ class ShowFits(object):
         for file_name in self.file_list:
             ccd = CCDData.read(file_name, unit='adu')
 
-            zlow, zhigh = self.__set_limits(ccd=ccd)
+
 
             if self.args.style == 'light':
                 plt.style.use('default')
@@ -49,10 +53,19 @@ class ShowFits(object):
             fig, ax = plt.subplots(figsize=(16, 9))
             fig.canvas.set_window_title(file_name)
             ax.set_title(file_name)
-            im = ax.imshow(ccd.data, cmap=self.args.cmap, clim=(zlow, zhigh))
-            divider = make_axes_locatable(ax)
-            cax = divider.append_axes('right', size="3%", pad=0.05)
-            fig.colorbar(im, cax=cax)
+            if ccd.header['NAXIS'] == 2:
+                zlow, zhigh = self.scale.get_limits(ccd.data)
+                im = ax.imshow(ccd.data, cmap=self.args.cmap, clim=(zlow, zhigh))
+                divider = make_axes_locatable(ax)
+                cax = divider.append_axes('right', size="3%", pad=0.05)
+                fig.colorbar(im, cax=cax)
+            elif ccd.header['NAXIS'] == 1:
+
+                wav, intens = self.wcs.read(ccd=ccd)
+
+                ax.plot(wav, intens)
+                ax.set_ylabel('Intensity')
+                ax.set_xlabel('Wavelength')
             plt.tight_layout()
             plt.show()
 
@@ -109,13 +122,6 @@ class ShowFits(object):
         if 'inverted' in args.cmap:
             args.cmap = re.sub('_inverted', '_r', args.cmap)
         return args
-
-    @staticmethod
-    def __set_limits(ccd):
-        z1 = np.mean(ccd.data) - 0.5 * np.std(ccd.data)
-        z2 = np.median(ccd.data) + np.std(ccd.data)
-
-        return z1, z2
 
 
 def show_fits():
