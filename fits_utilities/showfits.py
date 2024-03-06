@@ -51,7 +51,7 @@ class ShowFits(object):
 
 
             fig, ax = plt.subplots(figsize=(16, 9))
-            fig.canvas.set_window_title(file_name)
+            fig.canvas.manager.set_window_title(file_name)
             ax.set_title(file_name)
             if ccd.header['NAXIS'] == 2:
                 zlow, zhigh = self.scale.get_limits(ccd.data)
